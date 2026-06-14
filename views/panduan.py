@@ -18,7 +18,7 @@ def card_block(content):
 
 def show_panduan():
 
-     page_container(
+    page_container(
         "📖 Panduan Sistem (Petunjuk penggunaan aplikasi clustering akademik)"
     )
 
