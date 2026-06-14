@@ -1,0 +1,272 @@
+/* =========================================
+   GLOBAL TYPOGRAPHY (SAFE MODE - NO FONT OVERRIDE)
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+html,
+body,
+.stApp {
+    font-family: 'Inter', sans-serif;
+    background: #f5f6fa;
+    color: #0f172a;
+}
+
+
+/* smooth transition */
+
+* {
+    transition: all 0.18s ease-in-out;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.block-container {
+    padding: 2rem 2.5rem;
+    max-width: 1250px;
+}
+
+
+/* =========================================
+   CARD SYSTEM (SAAS CLEAN)
+========================================= */
+
+.card,
+div[data-testid="metric-container"],
+div[data-testid="stDataFrame"],
+.js-plotly-plot,
+.cluster-card,
+.stAlert {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+}
+
+
+/* hover card */
+
+.card:hover,
+div[data-testid="metric-container"]:hover,
+div[data-testid="stDataFrame"]:hover,
+.js-plotly-plot:hover,
+.cluster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(59, 130, 246, 0.18);
+    border-color: rgba(59, 130, 246, 0.35);
+}
+
+
+/* click effect */
+
+.card:active,
+.cluster-card:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.stButton>button {
+    width: 100%;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 10px 14px;
+}
+
+.stButton>button:hover {
+    background: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SIDEBAR PREMIUM + LOGO CENTER FIX (FINAL)
+========================================= */
+
+
+/* Sidebar background */
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%) !important;
+    padding: 14px;
+}
+
+
+/* semua isi sidebar jadi center */
+
+section[data-testid="stSidebar"]>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* reset semua style bawaan streamlit */
+
+section[data-testid="stSidebar"] * {
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+
+/* =========================================
+   LOGO (CENTER + NO CIRCLE)
+========================================= */
+
+section[data-testid="stSidebar"] img {
+    width: 120px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 14px auto !important;
+    /* HAPUS BULAT */
+    border-radius: 60px;
+    background: transparent !important;
+    padding: 0 !important;
+    /* biar tetap halus */
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+}
+
+
+/* wrapper gambar biar benar-benar center */
+
+section[data-testid="stSidebar"] div:has(img) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =========================================
+   SIDEBAR MENU (RADIO)
+========================================= */
+
+div[data-testid="stRadio"] label {
+    display: flex;
+    align-items: center;
+    padding: 11px 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+/* hover effect */
+
+div[data-testid="stRadio"] label:hover {
+    background: rgba(59, 130, 246, 0.25);
+    transform: translateX(5px);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+
+/* active */
+
+div[data-testid="stRadio"] label:has(input:checked) {
+    background: #ffffff !important;
+    color: #1e3a8a !important;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+div[data-testid="stRadio"] label:has(input:checked) * {
+    color: #1e3a8a !important;
+}
+
+
+/* hide radio input */
+
+div[data-testid="stRadio"] input {
+    display: none;
+}
+
+
+/* =========================================
+   DATAFRAME FIX (AUTO HEIGHT + NO EMPTY ROW SPACE)
+========================================= */
+
+
+/* wrapper utama tabel streamlit */
+
+div[data-testid="stDataFrame"] {
+    border-radius: 16px;
+    overflow: hidden;
+    /* penting: ini bikin tinggi ikut isi data */
+    height: auto !important;
+    max-height: none !important;
+    /* biar nyatu kayak card */
+    padding: 0 !important;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* tabel internal streamlit */
+
+div[data-testid="stDataFrame"] div {
+    max-height: none !important;
+}
+
+
+/* scroll hanya kalau data banyak (bukan kosong spacing) */
+
+div[data-testid="stDataFrame"] [data-testid="stTable"] {
+    overflow: auto;
+    max-height: 70vh;
+    /* batas aman biar tidak panjang kebangetan */
+}
+
+
+/* table style */
+
+thead tr th {
+    background: #f1f5f9 !important;
+    font-weight: 600;
+    color: #0f172a !important;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+
+/* row hover */
+
+tbody tr:hover {
+    background: rgba(59, 130, 246, 0.06) !important;
+}
+
+
+/* hilangkan gap bawah tabel (streamlit bug fix) */
+
+div[data-testid="stDataFrame"]>div {
+    margin-bottom: 0 !important;
+}
+
+
+/* =========================================
+   CARD CONSISTENCY (BIAR TABLE NYATU)
+========================================= */
+
+:root {
+    --card-text: #0f172a;
+}
+
+[data-theme="dark"] {
+    --card-text: #ffffff;
+}
+
+.card {
+    color: var(--card-text);
+}
