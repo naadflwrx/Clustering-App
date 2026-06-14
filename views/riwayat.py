@@ -68,7 +68,7 @@ def show_riwayat():
     <div class="badge badge-info">ℹ️ System Overview</div>
     <p style="margin-top:10px; text-align: justify;">
         Halaman ini menyimpan seluruh hasil proses clustering yang telah dilakukan sebelumnya.
-        Data dapat digunakan untuk tracking, evaluasi, dan pengambilan keputusan berbasis histori analitik.
+        Data dapat digunakan untuk melakukan tracking, evaluasi, dan pengambilan keputusan berbasis histori analitik.
     </p>
     """)
 
