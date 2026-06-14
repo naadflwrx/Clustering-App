@@ -19,18 +19,15 @@ def card_block(content):
 def show_panduan():
 
      page_container(
-        "⚙️ Proses Clustering (Analisis data mahasiswa menggunakan DBSCAN)"
+        "📖 Panduan Sistem (Petunjuk penggunaan aplikasi clustering akademik)"
     )
-    st.markdown("---")
 
     st.markdown("""
     <div class="card">
         <div class="badge badge-info">ℹ️ System Overview</div>
         <p style="margin-top:10px; text-align: justify;">    
-            Halaman ini digunakan untuk melakukan proses clustering mahasiswa menggunakan algoritma DBSCAN.
-            Sistem akan menganalisis data IPK dan IPS dari dataset yang diunggah, kemudian mengelompokkan mahasiswa ke dalam kategori performa akademik secara otomatis.
-            Hasil analisis ini dapat digunakan sebagai dasar pengambilan keputusan akademik seperti:
-            <b>program mentoring</b>, <b>evaluasi performa</b>, dan <b>rekomendasi pengembangan mahasiswa</b>.
+            Sistem ini dirancang untuk membantu Program Studi dalam melakukan analisis data mahasiswa berbasis clustering.
+            Panduan ini menjelaskan alur penggunaan mulai dari input dataset, proses clustering, hingga interpretasi hasil.
         </p>
     </div>
     """, unsafe_allow_html=True)
